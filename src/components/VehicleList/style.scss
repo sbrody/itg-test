@@ -1,3 +1,102 @@
 .VehicleList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  justify-content: center;
   width: 100%;
+
+  @media screen and (min-width: 551px) {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .vehicle-block {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+
+    @media screen and (min-width: 551px) {
+      flex-direction: column;
+      text-align: center;
+      width: 50%;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 25%;
+    }
+
+    img {
+      height: 160px;
+      transition: transform .5s ease;
+      width: 160px;
+
+      @media screen and (min-width: 551px) {
+        height: auto;
+        width: 100%;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        transition: transform .5s ease;
+      }
+    }
+
+    .vehicle-block__column {
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+
+      @media screen and (min-width: 550px) {
+        border-bottom: none;
+      }
+
+      @media screen and (min-width: 1024px) {
+        border-right: 1px solid #eee;
+        justify-content: flex-start;
+        min-height: 150px;
+      }
+    }
+
+    .vehicle-block__header {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 550px) {
+        font-size: 1.1rem;
+        margin: 20px 0;
+
+        span {
+          border-bottom: 2px solid;
+          border-top: 2px solid;
+          padding: 3px 0;
+        }
+      }
+    }
+
+    .vehicle-block__subheader {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0 0 10px 0;
+
+      @media screen and (min-width: 551px) {
+        font-size: .9rem;
+      }
+    }
+
+    .vehicle-block__text {
+      font-size: .8rem;
+      font-weight: 300;
+      margin: 0;
+
+      @media screen and (min-width: 551px) {
+        font-size: .9rem;
+      }
+    }
+  }
 }
